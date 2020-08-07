@@ -12,6 +12,15 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 
 * **Federator.ai Dashboard Overview**
 
+
+* **ProphetStor Federator.ai - Cluster Overview**
+
+
+* **ProphetStor Federator.ai - Application Overview**
+
+
+* **ProphetStor Federator.ai - Kafka Overview**
+
 ![dashboard_overview][7]
 
 * **Recommended Replicas vs Current/Desired Replicas**
@@ -43,6 +52,9 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
    - This timeseries graph shows the CPU usage of consumers.
 
 ![dashboard_cpu_usage][18]
+
+
+* **ProphetStor Federator.ai - Cost Analysis Overview**
 
 
 ## Setup
