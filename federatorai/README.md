@@ -13,8 +13,90 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 
 * **ProphetStor Federator.ai - Cluster Overview**
 
+![cluster_overview_dashboard][18]
+
+* **Cluster Resource Usage Predictions and Recommendations**
+   - 
+
+![cluster_resource_usage_prediction][19]
+
+
+* **Cluster Node Resource Usage Predictions and Recommendations**
+   - 
+
+![cluster_node_resource_usage_prediction][19]
+
+* **Node Current/Predicted Memory Usage (Daily)**
+   - 
+
+![cluster_node_daily_memory_usage][19]
+
+* **Node Current/Predicted Memory Usage (Weekly)**
+   - 
+
+![cluster_node_weekly_memory_usage][19]
+
+* **Node Current/Predicted Memory Usage (Monthly)**
+   - 
+
+![cluster_node_monthly_memory_usage][19]
+
+* **Node Current/Predicted CPU Usage (Daily)**
+   - 
+
+![cluster_node_daily_cpu_usage][19]
+
+
+* **Node Current/Predicted CPU Usage (Weekly)**
+   - 
+
+![cluster_node_weekly_cpu_usage][19]
+
+* **Node Current/Predicted CPU Usage (Monthly)**
+   - 
+
+![cluster_node_monthly_cpu_usage][19]
+
+
+
+
 
 * **ProphetStor Federator.ai - Application Overview**
+
+![application_overview_dashboard][18]
+
+* **Workload Prediction for Next 24 Hours**
+   - 
+
+![application_prediction_24h][19]
+
+* **Workload Prediction for Next 7 Days**
+   - 
+
+![application_prediction_7d][19]
+
+* **Workload Prediction for Next 30 Days**
+   - 
+
+![application_prediction_30d][19]
+
+* **Current/Predicted CPU Usage (Daily)**
+   - 
+
+![application_daily_cpu_prediction][19]
+
+* **Current/Predicted CPU Usage (Weekly)**
+   - 
+
+![application_weekly_cpu_prediction][19]
+
+* **Current/Predicted CPU Usage (Monthly)**
+   - 
+
+![application_monthly_cpu_prediction][19]
+
+
+
 
 
 * **ProphetStor Federator.ai - Kafka Overview**
