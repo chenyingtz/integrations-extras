@@ -15,45 +15,47 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 
 ![cluster_overview_dashboard][18]
 
+
 * **Cluster Resource Usage Predictions and Recommendations**
-   - 
+   - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the cluster resouce planning
 
 ![cluster_resource_usage_prediction][19]
 
 
 * **Cluster Node Resource Usage Predictions and Recommendations**
-   - 
+   - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the node resouce planning
 
 ![cluster_node_resource_usage_prediction][19]
 
+
 * **Node Current/Predicted Memory Usage (Daily)**
-   - 
+   - This graph shows daily predicted memory usage from the Federator.ai and memory usage of nodes resource utilization history
 
 ![cluster_node_daily_memory_usage][19]
 
 * **Node Current/Predicted Memory Usage (Weekly)**
-   - 
+   - This graph shows weekly predicted memory usage from the Federator.ai and memory usage of nodes resource utilization history
 
 ![cluster_node_weekly_memory_usage][19]
 
 * **Node Current/Predicted Memory Usage (Monthly)**
-   - 
+   - This graph shows monthly predicted memory usage from the Federator.ai and memory usage of nodes resource utilization history
 
 ![cluster_node_monthly_memory_usage][19]
 
 * **Node Current/Predicted CPU Usage (Daily)**
-   - 
+   - This graph shows daily predicted cpu usage from the Federator.ai and cpu usage of nodes resource utilization history
 
 ![cluster_node_daily_cpu_usage][19]
 
 
 * **Node Current/Predicted CPU Usage (Weekly)**
-   - 
+   - This graph shows weekly predicted cpu usage from the Federator.ai and cpu usage of nodes resource utilization history
 
 ![cluster_node_weekly_cpu_usage][19]
 
 * **Node Current/Predicted CPU Usage (Monthly)**
-   - 
+   - This graph shows monthly predicted cpu usage from the Federator.ai and cpu usage of nodes resource utilization history
 
 ![cluster_node_monthly_cpu_usage][19]
 
@@ -66,37 +68,34 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 ![application_overview_dashboard][18]
 
 * **Workload Prediction for Next 24 Hours**
-   - 
+   - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the application resouce planning for next 24 hours
 
 ![application_prediction_24h][19]
 
 * **Workload Prediction for Next 7 Days**
-   - 
+   - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the application resouce planning for next 7 days
 
 ![application_prediction_7d][19]
 
 * **Workload Prediction for Next 30 Days**
-   - 
+   - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the application resouce planning for next 30 days
 
 ![application_prediction_30d][19]
 
 * **Current/Predicted CPU Usage (Daily)**
-   - 
+   - This graph shows daily predicted cpu usage from the Federator.ai and cpu usage of the application resource utilization history
 
 ![application_daily_cpu_prediction][19]
 
 * **Current/Predicted CPU Usage (Weekly)**
-   - 
+   - This graph shows weekly predicted cpu usage from the Federator.ai and cpu usage of the application resource utilization history
 
 ![application_weekly_cpu_prediction][19]
 
 * **Current/Predicted CPU Usage (Monthly)**
-   - 
+   - This graph shows monthly predicted cpu usage from the Federator.ai and cpu usage of the application resource utilization history
 
 ![application_monthly_cpu_prediction][19]
-
-
-
 
 
 * **ProphetStor Federator.ai - Kafka Overview**
@@ -135,6 +134,36 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 
 
 * **ProphetStor Federator.ai - Cost Analysis Overview**
+
+* **Current Cluster Cost and Current Cluster Configuration**
+   - These tables show the current cost and environment configuration of the cloud cluster
+
+![dashboard_cpu_usage][18]
+
+* **Recommended Cluster - AWS and Recommended Cluster Configuration - AWS**
+   - These tables show the recommended AWS cluster instance configuration from Federator.ai, the cost of the AWS instances
+
+![dashboard_cpu_usage][18]
+
+* **Recommended Cluster - Azure and Recommended Cluster Configuration - Azure**
+   - These tables show the recommended Azure cluster instance configuration from Federator.ai, the cost of the Azure instances
+
+![dashboard_cpu_usage][18]
+
+* **Recommended Cluster - GCP and Recommended Cluster Configuration - GCP**
+   - These tables show the recommended GCP cluster instance configuration from Federator.ai, the cost of the GCP instances
+
+![dashboard_cpu_usage][18]
+
+* **Namespace with Highest Cost ($/day)**
+   - This graph shows the highest daily cost of the namespaces in the current cluster 
+
+![dashboard_cpu_usage][18]
+
+* **Namespace with Highest Predicted Cost ($/month)**
+   - This graph shows the predicted highest monthly cost of the namespaces in the current cluster
+
+![dashboard_cpu_usage][18]
 
 
 ## Setup
