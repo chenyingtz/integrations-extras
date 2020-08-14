@@ -26,7 +26,9 @@
 	},
     "saved_views": {},
     "monitors": {
-		"Recommended Replica Number Reaches Max Limit": "assets/recommended_monitors/federatorai_recommended_replica_num.json"
+		"Recommended Replica Number Reaches Max Limit": "assets/recommended_monitors/federatorai_recommended_replica_num.json",
+		"Predicted CPU Load in 24 hours is High on {{host.name}}": "assets/recommended_monitors/high_cpu_prediction.json",
+		"Memory Prediction in 24 hours is High on {{host.name}}": "assets/recommended_monitors/high_memory_prediction.json"
 	},
     "service_checks": "assets/service_checks.json"
   }
