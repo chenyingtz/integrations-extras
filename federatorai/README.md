@@ -13,157 +13,187 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 
 * **ProphetStor Federator.ai - Cluster Overview**
 
-![cluster_overview_dashboard][18]
-
+![cluster_overview_dashboard][19]
 
 * **Cluster Resource Usage Predictions and Recommendations**
    - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the cluster resouce planning
 
-![cluster_resource_usage_prediction][19]
+![cluster_resource_usage_prediction][20]
 
 
 * **Cluster Node Resource Usage Predictions and Recommendations**
    - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the node resouce planning
 
-![cluster_node_resource_usage_prediction][19]
+![cluster_node_resource_usage_prediction][21]
 
 
 * **Node Current/Predicted Memory Usage (Daily)**
    - This graph shows daily predicted memory usage from the Federator.ai and memory usage of nodes resource utilization history
 
-![cluster_node_daily_memory_usage][19]
+![cluster_node_daily_memory_usage][22]
 
 * **Node Current/Predicted Memory Usage (Weekly)**
    - This graph shows weekly predicted memory usage from the Federator.ai and memory usage of nodes resource utilization history
 
-![cluster_node_weekly_memory_usage][19]
+![cluster_node_weekly_memory_usage][23]
 
 * **Node Current/Predicted Memory Usage (Monthly)**
    - This graph shows monthly predicted memory usage from the Federator.ai and memory usage of nodes resource utilization history
 
-![cluster_node_monthly_memory_usage][19]
+![cluster_node_monthly_memory_usage][24]
 
 * **Node Current/Predicted CPU Usage (Daily)**
    - This graph shows daily predicted cpu usage from the Federator.ai and cpu usage of nodes resource utilization history
 
-![cluster_node_daily_cpu_usage][19]
-
+![cluster_node_daily_cpu_usage][25]
 
 * **Node Current/Predicted CPU Usage (Weekly)**
    - This graph shows weekly predicted cpu usage from the Federator.ai and cpu usage of nodes resource utilization history
 
-![cluster_node_weekly_cpu_usage][19]
+![cluster_node_weekly_cpu_usage][26]
 
 * **Node Current/Predicted CPU Usage (Monthly)**
    - This graph shows monthly predicted cpu usage from the Federator.ai and cpu usage of nodes resource utilization history
 
-![cluster_node_monthly_cpu_usage][19]
-
-
-
-
+![cluster_node_monthly_cpu_usage][27]
 
 * **ProphetStor Federator.ai - Application Overview**
 
-![application_overview_dashboard][18]
+![application_overview_dashboard][28]
 
 * **Workload Prediction for Next 24 Hours**
    - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the application resouce planning for next 24 hours
 
-![application_prediction_24h][19]
+![application_prediction_24h][29]
 
 * **Workload Prediction for Next 7 Days**
    - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the application resouce planning for next 7 days
 
-![application_prediction_7d][19]
+![application_prediction_7d][30]
 
 * **Workload Prediction for Next 30 Days**
    - This table shows the maximum/minimum/average value of cpu/memory workload prediction and recommended cpu/memory from the Federator.ai for the application resouce planning for next 30 days
 
-![application_prediction_30d][19]
+![application_prediction_30d][31]
 
 * **Current/Predicted CPU Usage (Daily)**
    - This graph shows daily predicted cpu usage from the Federator.ai and cpu usage of the application resource utilization history
 
-![application_daily_cpu_prediction][19]
+![application_daily_cpu_prediction][32]
 
 * **Current/Predicted CPU Usage (Weekly)**
    - This graph shows weekly predicted cpu usage from the Federator.ai and cpu usage of the application resource utilization history
 
-![application_weekly_cpu_prediction][19]
+![application_weekly_cpu_prediction][33]
 
 * **Current/Predicted CPU Usage (Monthly)**
    - This graph shows monthly predicted cpu usage from the Federator.ai and cpu usage of the application resource utilization history
 
-![application_monthly_cpu_prediction][19]
+![application_monthly_cpu_prediction][34]
 
+* **Current/Predicted Memory Usage (Daily)**
+   - This graph shows daily predicted memory usage from the Federator.ai and the memory usage of the application resource utilization history
+
+![application_daily_memory_prediction][35]
+
+* **Current/Predicted Memory Usage (Weekly)**
+   - This graph shows weekly predicted memory usage from the Federator.ai and the memory usage of the application resource utilization history
+
+![application_weekly_memory_prediction][36]
+
+* **Current/Predicted Memory Usage (Monthly)**
+   - This graph shows monthly predicted memory usage from the Federator.ai and the memory usage of the application resource utilization history
+
+![application_monthly_memory_prediction][37]
+
+* **Current/Desired/Recommended Replicas**
+   - This timeseries graph shows the recommended replicas from the Federator.ai and the desired and current replicas of the controller
+
+![application_recommended_replicas][38]
+
+* **Memory Usage/Request/Limit vs Rec Memory Limit**
+   - This timeseries graph shows the recommended memory limit from the Federator.ai and the requested, limited and current memory usage of the controller
+
+![application_recommended_memory][39]
+
+* **CPU Usage/Request/Limit vs Rec CPU Limit**
+   - This timeseries graph shows the recommended CPU limit from the Federator.ai and the requested, limited and current CPU usage of the controller
+
+![application_recommended_cpu][40]
+
+* **CPU Usage/Limit Utilization**
+   - This timeseries graph shows the CPU utilization of the controller and visualize if the CPU utilization is over limit or under limit
+
+![application_cpu_usage][41]
 
 * **ProphetStor Federator.ai - Kafka Overview**
 
-![dashboard_overview][7]
+![dashboard_overview][42]
 
 * **Recommended Replicas vs Current/Desired Replicas**
    - This timeseries graph shows the recommended replicas from the Federator.ai and the desired and current replicas in the system.
 
-![dashboard_recommended_replicas][13]
+![dashboard_recommended_replicas][43]
 
 * **Production vs Consumption vs Production Prediction**
    - This timeseries graph shows the Kafka message production rate and consumption rate and the production rate predicted by Federator.ai.
 
-![dashboard_production_consumption][14]
+![dashboard_production_consumption][44]
 
 * **Kafka Consumer Lag**
    - This timeseries graph shows the sum of consumer lags from all partitions.
 
-![dashboard_consumer_lag][15]
+![dashboard_consumer_lag][45]
 
 * **Consumer Queue Latency (msec)**
    - This timeseries graph shows the average latency of a message in the message queue before it is received by a consumer.
 
-![dashboard_queue_latency][16]
+![dashboard_queue_latency][46]
 
 * **Deployment Memory Usage**
    - This timeseries graph shows the memory usage of consumers.
 
-![dashboard_memory_usage][17]
+![dashboard_memory_usage][47]
 
 * **Deployment CPU Usage**
    - This timeseries graph shows the CPU usage of consumers.
 
-![dashboard_cpu_usage][18]
+![dashboard_cpu_usage][48]
 
 
 * **ProphetStor Federator.ai - Cost Analysis Overview**
 
-* **Current Cluster Cost and Current Cluster Configuration**
-   - These tables show the current cost and environment configuration of the cloud cluster
+![cost_analysis_overview][49]
 
-![dashboard_cpu_usage][18]
+* **Current Cluster Cost and Current Cluster Configuration**
+   - These tables show the current cost and the environment configuration of the cluster
+
+![current_cluster_cost][50]
 
 * **Recommended Cluster - AWS and Recommended Cluster Configuration - AWS**
-   - These tables show the recommended AWS cluster instance configuration from Federator.ai, the cost of the AWS instances
+   - These tables show the recommended AWS cluster instance configuration from Federator.ai and the cost of the recommended AWS instances
 
-![dashboard_cpu_usage][18]
+![recommended_cluster_aws][51]
 
 * **Recommended Cluster - Azure and Recommended Cluster Configuration - Azure**
-   - These tables show the recommended Azure cluster instance configuration from Federator.ai, the cost of the Azure instances
+   - These tables show the recommended Azure cluster instance configuration from Federator.ai and the cost of the recommended Azure instances
 
-![dashboard_cpu_usage][18]
+![recommended_cluster_azure][52]
 
 * **Recommended Cluster - GCP and Recommended Cluster Configuration - GCP**
-   - These tables show the recommended GCP cluster instance configuration from Federator.ai, the cost of the GCP instances
+   - These tables show the recommended GCP cluster instance configuration from Federator.ai and the cost of the recommended GCP instances
 
-![dashboard_cpu_usage][18]
+![recommended_cluster_gcp][53]
 
 * **Namespace with Highest Cost ($/day)**
    - This graph shows the highest daily cost of the namespaces in the current cluster 
 
-![dashboard_cpu_usage][18]
+![namespace_cost_daily][54]
 
 * **Namespace with Highest Predicted Cost ($/month)**
    - This graph shows the predicted highest monthly cost of the namespaces in the current cluster
 
-![dashboard_cpu_usage][18]
+![namespace_predicted_cost_monthly][55]
 
 
 ## Setup
@@ -306,3 +336,40 @@ Need help? Read [ProphetStor Federator.ai documentations][5] or contact [Datadog
 [16]: https://raw.githubusercontent.com/DataDog/integrations-extras/master/federatorai/images/dashboard_queue_latency.png
 [17]: https://raw.githubusercontent.com/DataDog/integrations-extras/master/federatorai/images/dashboard_memory_usage.png
 [18]: https://raw.githubusercontent.com/DataDog/integrations-extras/master/federatorai/images/dashboard_cpu_usage.png
+[19]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_overview_dashboard.png
+[20]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_resource_usage_prediction.png
+[21]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_node_resource_usage_prediction.png
+[22]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_node_daily_memory_usage.png
+[23]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_node_weekly_memory_usage.png
+[24]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_node_monthly_memory_usage.png
+[25]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_node_daily_cpu_usage.png
+[26]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_node_weekly_cpu_usage.png
+[27]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cluster_node_monthly_cpu_usage.png
+[28]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_overview_dashboard.png
+[29]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_prediction_24h.png
+[30]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_prediction_7d.png
+[31]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_prediction_30d.png
+[32]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_daily_cpu_prediction.png
+[33]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_weekly_cpu_prediction.png
+[34]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_monthly_cpu_prediction.png
+[35]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_daily_memory_prediction.png
+[36]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_weekly_memory_prediction.png
+[37]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_monthly_memory_prediction.png
+[38]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_recommended_replicas.png
+[39]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_recommended_memory.png
+[40]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_recommended_cpu.png
+[41]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/application_cpu_usage.png
+[42]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/dashboard_overview.png
+[43]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/dashboard_recommended_replicas.png
+[44]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/dashboard_production_consumption.png
+[45]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/dashboard_consumer_lag.png
+[46]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/dashboard_queue_latency.png
+[47]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/dashboard_memory_usage.png
+[48]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/dashboard_cpu_usage.png
+[49]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/cost_analysis_overview.png
+[50]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/current_cluster_cost.png
+[51]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/recommended_cluster_aws.png
+[52]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/recommended_cluster_azure.png
+[53]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/recommended_cluster_gcp.png
+[54]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/namespace_cost_daily.png
+[55]: https://raw.githubusercontent.com/chenyingtz/integrations-extras/federatorai-integration/federatorai/images/namespace_predicted_cost_monthly.png
