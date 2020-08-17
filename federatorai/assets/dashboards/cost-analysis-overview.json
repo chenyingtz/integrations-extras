@@ -19,7 +19,7 @@
         }
     ],
     "is_read_only": false,
-    "id": "dk5-awx-s4j",
+    "id": "85y-uay-psv",
     "title": "ProphetStor Federator.ai Cost Analysis Overview",
     "widgets": [
         {
@@ -34,10 +34,10 @@
                 "background_color": "green"
             },
             "layout": {
-                "y": 1,
-                "x": 31,
-                "height": 6,
-                "width": 90
+                "y": 0,
+                "x": 27,
+                "height": 5,
+                "width": 120
             },
             "id": 2
         },
@@ -46,229 +46,309 @@
                 "custom_links": [],
                 "title_size": "16",
                 "title": "Current Cluster Configuration",
-                "title_align": "left",
+                "title_align": "center",
                 "requests": [
                     {
-                        "q": "top(sum:kubernetes.cpu.capacity{$kube_cluster} by {host,kube_node_role,availability-zone,instance-type,iam_profile}, 10, 'mean', 'desc')",
-                        "aggregator": "avg",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "custom_bg_color": "#676767",
+                                "palette": "custom_bg",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ],
+                        "q": "top(sum:kubernetes_state.node.cpu_capacity{$kube_cluster} by {host,kube_node_role,availability-zone,instance-type}, 10, 'mean', 'desc')",
+                        "alias": "CPU Capacity",
                         "limit": 100,
-                        "order": "desc",
-                        "alias": "CPU Capacity"
+                        "order": "desc"
                     },
                     {
-                        "q": "top(sum:kubernetes.memory.capacity{$kube_cluster} by {host,kube_node_role,availability-zone,instance-type,iam_profile}, 10, 'mean', 'desc')",
-                        "aggregator": "avg",
+                        "q": "top(sum:kubernetes_state.node.memory_capacity{$kube_cluster} by {host,kube_node_role,availability-zone,instance-type}, 10, 'mean', 'desc')",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "custom_bg_color": "#676767",
+                                "palette": "custom_bg",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ],
                         "alias": "Memory Capacity"
                     },
                     {
-                        "q": "top(sum:system.disk.total{$kube_cluster} by {host,kube_node_role,availability-zone,instance-type,iam_profile}, 10, 'mean', 'desc')",
-                        "aggregator": "avg",
+                        "q": "top(sum:system.disk.total{$kube_cluster} by {host,kube_node_role,availability-zone,instance-type}, 10, 'mean', 'desc')",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "custom_bg_color": "#676767",
+                                "palette": "custom_bg",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ],
                         "alias": "Storage Size"
                     }
                 ],
                 "type": "query_table"
             },
             "layout": {
-                "y": 9,
-                "x": 51,
-                "height": 17,
-                "width": 70
+                "y": 7,
+                "x": 50,
+                "height": 18,
+                "width": 97
             },
             "id": 2791504965024100
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
                 "title": "Recommended Cluster Configuration - AWS",
                 "title_align": "left",
-                "time": {},
+                "time": {
+                    "live_span": "1d"
+                },
                 "requests": [
                     {
-                        "q": "top(sum:federatorai.recommendation.instance{$kube_cluster, provider:aws, $country, $pricing_option, time_interval:30_days} by {provider,display_name,region,instance_type,ondemand_instance_master_num,reserved_instance_master_num,ondemand_instance_worker_num,reserved_instance_worker_num,country}, 10, 'mean', 'desc')",
-                        "aggregator": "avg",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "custom_bg_color": "#676767",
+                                "palette": "custom_bg",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ],
+                        "q": "top(sum:federatorai.recommendation.instance{$kube_cluster,provider:aws,$country,$pricing_option,time_interval:30_days} by {provider,display_name,region,instance_type,ondemand_instance_master_num,reserved_instance_master_num,ondemand_instance_worker_num,reserved_instance_worker_num,country}, 10, 'mean', 'desc')",
+                        "alias": "$/month",
                         "limit": 100,
-                        "order": "desc",
-                        "alias": "Cost/month"
+                        "order": "desc"
                     }
                 ],
                 "type": "query_table"
             },
             "layout": {
-                "y": 29,
-                "x": 24,
-                "height": 19,
-                "width": 97
+                "y": 27,
+                "x": 27,
+                "height": 13,
+                "width": 120
             },
             "id": 6237722782744370
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
                 "title": "Recommended Cluster Configuration - Azure",
                 "title_align": "left",
-                "time": {},
+                "time": {
+                    "live_span": "1d"
+                },
                 "requests": [
                     {
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "custom_bg_color": "#676767",
+                                "palette": "custom_bg",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ],
                         "q": "top(sum:federatorai.recommendation.instance{$kube_cluster,provider:azure,$country,$pricing_option,time_interval:30_days} by {provider,display_name,region,instance_type,ondemand_instance_master_num,reserved_instance_master_num,ondemand_instance_worker_num,reserved_instance_worker_num,country}, 10, 'mean', 'desc')",
-                        "aggregator": "avg",
+                        "alias": "$/month",
                         "limit": 100,
-                        "order": "desc",
-                        "alias": "Cost/month"
+                        "order": "desc"
                     }
                 ],
                 "type": "query_table"
             },
             "layout": {
-                "y": 50,
-                "x": 24,
-                "height": 19,
-                "width": 97
+                "y": 42,
+                "x": 27,
+                "height": 13,
+                "width": 120
             },
             "id": 2920113453856764
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
                 "title": "Recommended Cluster Configuration - GCP",
                 "title_align": "left",
-                "time": {},
+                "time": {
+                    "live_span": "1d"
+                },
                 "requests": [
                     {
-                        "q": "top(sum:federatorai.recommendation.instance{$kube_cluster, provider:gcp, $country, $pricing_option, time_interval:30_days} by {provider,display_name,region,instance_type,ondemand_instance_master_num,reserved_instance_master_num,ondemand_instance_worker_num,reserved_instance_worker_num,country}, 10, 'mean', 'desc')",
-                        "aggregator": "avg",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "custom_bg_color": "#676767",
+                                "palette": "custom_bg",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ],
+                        "q": "top(sum:federatorai.recommendation.instance{$kube_cluster,provider:gcp,$country,$pricing_option,time_interval:30_days} by {provider,display_name,region,instance_type,ondemand_instance_master_num,reserved_instance_master_num,ondemand_instance_worker_num,reserved_instance_worker_num,country}, 10, 'mean', 'desc')",
+                        "alias": "$/month",
                         "limit": 100,
-                        "order": "desc",
-                        "alias": "Cost/month"
+                        "order": "desc"
                     }
                 ],
                 "type": "query_table"
             },
             "layout": {
-                "y": 71,
-                "x": 24,
-                "height": 19,
-                "width": 97
+                "y": 57,
+                "x": 27,
+                "height": 13,
+                "width": 120
             },
             "id": 3112214039577590
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
                 "title": "Current Cluster Cost",
                 "title_align": "left",
                 "custom_unit": "$/mo",
                 "precision": 2,
-                "time": {},
+                "time": {
+                    "live_span": "4h"
+                },
                 "autoscale": false,
                 "requests": [
                     {
                         "q": "sum:federatorai.cost_analysis.instance.cost{$kube_cluster,time_interval:30_days}",
-                        "aggregator": "avg"
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "custom_bg_color": "#fba937",
+                                "palette": "custom_bg",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ]
                     }
                 ],
                 "type": "query_value"
             },
             "layout": {
-                "y": 9,
-                "x": 31,
-                "height": 17,
-                "width": 18
+                "y": 7,
+                "x": 27,
+                "height": 18,
+                "width": 21
             },
             "id": 7896168960410994
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
                 "title": "Recommended Cluster - AWS",
                 "title_align": "left",
                 "custom_unit": "$/mo",
                 "precision": 2,
-                "time": {},
+                "time": {
+                    "live_span": "1d"
+                },
                 "autoscale": false,
                 "requests": [
                     {
                         "q": "sum:federatorai.recommendation.instance{$kube_cluster,provider:aws,$country,$pricing_option,time_interval:30_days} by {provider,region,country}",
-                        "aggregator": "avg"
+                        "aggregator": "last"
                     }
                 ],
                 "type": "query_value"
             },
             "layout": {
-                "y": 29,
-                "x": 1,
-                "height": 19,
-                "width": 21
+                "y": 27,
+                "x": 0,
+                "height": 7,
+                "width": 25
             },
             "id": 7792955906365076
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
                 "title": "Recommended Cluster - Azure",
                 "title_align": "left",
                 "custom_unit": "$/mo",
                 "precision": 2,
-                "time": {},
+                "time": {
+                    "live_span": "1d"
+                },
                 "autoscale": false,
                 "requests": [
                     {
                         "q": "sum:federatorai.recommendation.instance{$kube_cluster,$country,provider:azure,$pricing_option,time_interval:30_days} by {provider,region,country}",
-                        "aggregator": "avg"
+                        "aggregator": "last"
                     }
                 ],
                 "type": "query_value"
             },
             "layout": {
-                "y": 50,
-                "x": 1,
-                "height": 19,
-                "width": 21
+                "y": 42,
+                "x": 0,
+                "height": 7,
+                "width": 25
             },
             "id": 6588457870869918
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
                 "title": "Recommended Cluster - GCP",
                 "title_align": "left",
                 "custom_unit": "$/mo",
                 "precision": 2,
-                "time": {},
+                "time": {
+                    "live_span": "1d"
+                },
                 "autoscale": false,
                 "requests": [
                     {
                         "q": "sum:federatorai.recommendation.instance{$kube_cluster,$country,provider:gcp,$pricing_option,time_interval:30_days} by {provider,region,country}",
-                        "aggregator": "avg"
+                        "aggregator": "last"
                     }
                 ],
                 "type": "query_value"
             },
             "layout": {
-                "y": 71,
-                "x": 1,
-                "height": 19,
-                "width": 21
+                "y": 57,
+                "x": 0,
+                "height": 7,
+                "width": 25
             },
             "id": 5277049441027492
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Top 10 Namespace Cost Percentage",
+                "title": "Namespace with Highest Cost  ($/day)",
                 "title_align": "left",
-                "time": {},
+                "time": {
+                    "live_span": "4h"
+                },
                 "requests": [
                     {
-                        "q": "top(avg:federatorai.cost_analysis.namespace.cost{$kube_cluster,time_interval:24_hours} by {kube_namespace}/(avg:federatorai.cost_analysis.instance.cost{$kube_cluster}/30)*100,10,'mean','desc')"
+                        "q": "top(avg:federatorai.cost_analysis.namespace.cost{$kube_cluster,time_interval:24_hours} by {kube_namespace}, 10, 'mean', 'desc')"
                     }
                 ],
                 "type": "toplist"
             },
             "layout": {
-                "y": 100,
-                "x": 1,
+                "y": 78,
+                "x": 0,
                 "height": 27,
-                "width": 59
+                "width": 72
             },
             "id": 8803045842298138
         },
@@ -279,36 +359,39 @@
                 "type": "note",
                 "tick_edge": "bottom",
                 "text_align": "center",
-                "content": "**Namespace Cost Allocation History for Last 24 hours**",
+                "content": "**Namespace Cost Allocation for Last 24 hours**",
                 "font_size": "16",
                 "background_color": "green"
             },
             "layout": {
-                "y": 92,
-                "x": 1,
-                "height": 6,
-                "width": 59
+                "y": 72,
+                "x": 0,
+                "height": 5,
+                "width": 72
             },
             "id": 6854538000515634
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Top 10 Namespace Cost Percentage Prediction",
+                "title": "Namespace with Highest Predicted Cost ($/month)",
                 "title_align": "left",
-                "time": {},
+                "time": {
+                    "live_span": "1d"
+                },
                 "requests": [
                     {
-                        "q": "top(avg:federatorai.prediction.namespace.cost{$kube_cluster,time_interval:30_days} by {kube_namespace}/avg:federatorai.cost_analysis.instance.cost{$kube_cluster}*100,10,'mean','desc')"
+                        "q": "top(avg:federatorai.prediction.namespace.cost{$kube_cluster,prediction_window:30_days} by {kube_namespace}, 10, 'mean', 'desc')"
                     }
                 ],
                 "type": "toplist"
             },
             "layout": {
-                "y": 100,
-                "x": 62,
+                "y": 78,
+                "x": 75,
                 "height": 27,
-                "width": 59
+                "width": 72
             },
             "id": 2664358347618006
         },
@@ -324,10 +407,10 @@
                 "background_color": "green"
             },
             "layout": {
-                "y": 92,
-                "x": 62,
-                "height": 6,
-                "width": 59
+                "y": 72,
+                "x": 75,
+                "height": 5,
+                "width": 72
             },
             "id": 1249532727899278
         },
@@ -338,12 +421,161 @@
                 "type": "image"
             },
             "layout": {
-                "y": 1,
-                "x": 1,
+                "y": 0,
+                "x": 0,
                 "height": 25,
-                "width": 28
+                "width": 25
             },
             "id": 1766462224106286
+        },
+        {
+            "definition": {
+                "url": "https://raw.githubusercontent.com/prophetstor-ai/public/master/images/aws.png",
+                "sizing": "fit",
+                "type": "image"
+            },
+            "layout": {
+                "y": 34,
+                "x": 0,
+                "height": 6,
+                "width": 13
+            },
+            "id": 4317564569469952
+        },
+        {
+            "definition": {
+                "url": "https://raw.githubusercontent.com/prophetstor-ai/public/master/images/azure.png",
+                "sizing": "fit",
+                "margin": "small",
+                "type": "image"
+            },
+            "layout": {
+                "y": 49,
+                "x": 0,
+                "height": 6,
+                "width": 13
+            },
+            "id": 3029141034234740
+        },
+        {
+            "definition": {
+                "url": "https://raw.githubusercontent.com/prophetstor-ai/public/master/images/gcp2.png",
+                "sizing": "fit",
+                "margin": "small",
+                "type": "image"
+            },
+            "layout": {
+                "y": 64,
+                "x": 0,
+                "height": 6,
+                "width": 13
+            },
+            "id": 1456431435583540
+        },
+        {
+            "definition": {
+                "custom_links": [],
+                "title_size": "13",
+                "title": "Savings",
+                "title_align": "left",
+                "custom_unit": "$/mo",
+                "precision": 2,
+                "time": {
+                    "live_span": "1d"
+                },
+                "autoscale": false,
+                "requests": [
+                    {
+                        "q": "sum:federatorai.cost_analysis.instance.cost{$kube_cluster,time_interval:30_days}-sum:federatorai.recommendation.instance{$kube_cluster,provider:aws,$pricing_option,$country,time_interval:30_days} by {provider,region,country}",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "palette": "red_on_white",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ]
+                    }
+                ],
+                "type": "query_value"
+            },
+            "layout": {
+                "y": 34,
+                "x": 13,
+                "height": 6,
+                "width": 12
+            },
+            "id": 5722919808194308
+        },
+        {
+            "definition": {
+                "custom_links": [],
+                "title_size": "13",
+                "title": "Savings",
+                "title_align": "left",
+                "custom_unit": "$/mo",
+                "precision": 2,
+                "time": {
+                    "live_span": "1d"
+                },
+                "autoscale": false,
+                "requests": [
+                    {
+                        "q": "sum:federatorai.cost_analysis.instance.cost{$kube_cluster,time_interval:30_days}-sum:federatorai.recommendation.instance{$kube_cluster,$pricing_option,$country,time_interval:30_days,provider:azure} by {provider,region,country}",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "palette": "red_on_white",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ]
+                    }
+                ],
+                "type": "query_value"
+            },
+            "layout": {
+                "y": 49,
+                "x": 13,
+                "height": 6,
+                "width": 12
+            },
+            "id": 5367046141925434
+        },
+        {
+            "definition": {
+                "custom_links": [],
+                "title_size": "13",
+                "title": "Savings",
+                "title_align": "left",
+                "custom_unit": "$/mo",
+                "precision": 2,
+                "time": {
+                    "live_span": "1d"
+                },
+                "autoscale": false,
+                "requests": [
+                    {
+                        "q": "sum:federatorai.cost_analysis.instance.cost{$kube_cluster,time_interval:30_days}-sum:federatorai.recommendation.instance{$kube_cluster,$pricing_option,$country,time_interval:30_days,provider:gcp} by {provider,region,country}",
+                        "aggregator": "last",
+                        "conditional_formats": [
+                            {
+                                "palette": "red_on_white",
+                                "value": 0,
+                                "comparator": ">"
+                            }
+                        ]
+                    }
+                ],
+                "type": "query_value"
+            },
+            "layout": {
+                "y": 64,
+                "x": 13,
+                "height": 6,
+                "width": 12
+            },
+            "id": 5732360416320286
         }
     ],
     "layout_type": "free"
