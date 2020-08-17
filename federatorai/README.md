@@ -138,30 +138,45 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 2. Install the Federator.ai for OpenShift/Kubernetes by the following command
 
    ```shell
-   $ curl https://raw.githubusercontent.com/containers-ai/federatorai-operator/datadog/deploy/install.sh |bash
+   $ curl https://raw.githubusercontent.com/containers-ai/federatorai-operator/master/deploy/federatorai-launcher.sh | bash
    ```
 
    ```shell
-   $ curl https://raw.githubusercontent.com/containers-ai/federatorai-operator/datadog/deploy/install.sh |bash
+   curl https://raw.githubusercontent.com/containers-ai/federatorai-operator/master/deploy/federatorai-launcher.sh | bash
+   Please input Federator.ai version tag: datadog
+   
+   Downloading scripts ...
+   Done
+   Do you want to use private repository URL? [default: n]:
+   Do you want to launch Federator.ai installation script? [default: y]:
+   
+   Executing install.sh ...
    Checking environment version...
    ...Passed
-   Please input Federator.ai Operator tag: datadog
    Enter the namespace you want to install Federator.ai [default: federatorai]:
    .........
    (snipped)
    .........
-   You can now access GUI through https://federatorai-dashboard-frontend-federatorai.apps.jc-ocp4.172-31-17-84.nip.io
+   All federatorai pods are ready.
+   
+   ========================================
+   You can now access GUI through https://<YOUR IP>:31012
    Default login credential is admin/admin
-
-   Also, you can start to apply alamedascaler CR for the namespace you would like to monitor.
-   Review administration guide for further details.
+   
+   Also, you can start to apply alamedascaler CR for the target you would like to monitor.
+   Review administration guide for further details.Review administration guide for further details.
    ========================================
    .........
    (snipped)
    .........
-   Install Alameda successfully
-
-   Downloaded YAML files are located under /tmp/install-op
+   Install Federator.ai successfully
+   Do you want to monitor this cluster? [default: y]:
+   Use "cluster-demo" as cluster name and DD_TAGS
+   Applying file alamedascaler_federatorai.yaml ...
+   alamedascaler.autoscaling.containers.ai/clusterscaler created
+   Done
+   
+   Downloaded YAML files are located under /tmp/install-op 
    ```
 
 3. Verify Federator.ai pods are running properly
@@ -179,57 +194,61 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
 2. Log in to Datadog with your account and get an [API key and Application key][11] for using Datadog API.
 
 3. Configure the Federator.ai Data-Adapter.
-   - Download the Data-Adapter configuration script from Github.
+   - Data-Adapter configuration script should already be downloaded in /tmp/federatorai-scripts/datadog/ directory. If not, re-run the federatorai-launcher.sh script described in the installation step 2 without launching Federator.ai installation script again.
 
    ```shell
-   $ curl https://raw.githubusercontent.com/containers-ai/federatorai-operator/datadog/deploy/federatorai-setup-for-datadog.sh -O
+   $ curl https://raw.githubusercontent.com/containers-ai/federatorai-operator/master/deploy/federatorai-launcher.sh | bash
+   Please input Federator.ai version tag: datadog
+   
+   Downloading scripts ...
+   Done
+   Do you want to use private repository URL? [default: n]:
+   Do you want to launch Federator.ai installation script? [default: y]: n
    ```
 
    - Change the execution permission.
 
    ```shell
-   $ chomd +x federatorai-setup-for-datadog.sh
-   ```
-
-   - Prepare .kubeconfig (sh -c "export KUBECONFIG=.kubeconfig; oc login <K8s_LOGIN_URL>") or use an existing one. For example:
-
-   ```shell
-   $ sh -c "export KUBECONFIG=.kubeconfig; oc login https://api.ocp4.example.com:6443"
+   $ chomd +x /tmp/federatorai-scripts/datadog/federatorai-setup-for-datadog.sh
    ```
 
    - Run the configuration script and follow the steps to fill in configuration parameters:
 
    ```shell
    $ ./federatorai-setup-for-datadog.sh -k .kubeconfig
-   ```
-
-   ```shell
-   $ ./federatorai-setup-for-datadog.sh -k .kubeconfig
-   You are connecting to cluster: https://api.jc-ocp4.172-31-17-84.nip.io:6443
-
+   Checking environment version...
+   ...Passed
+   You are connecting to cluster: https://<YOUR IP>:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+   
    Getting Datadog info...
    Input a Datadog API Key []:xxxxx9273dxxcbc155xx3a7331xxxxx
    Input a Datadog Application Key []:xxxxx7220db1478xxxxxcb5c323fcb02a11xxxxx
-
-   Getting the Kafka info... No.1
-   Input Kafka consumer deployment name []: consumer
-   Input Kafka consumer deeployment namespace []: myproject
-   Input Kafka consumer minimum replica number []: 1
-   Input Kafka consumer maximum replica number []: 30
-   Input Kafka consumer group name []: group0001
+   
+   Getting Kafka info... No.1
+   
+   You can use command "kubectl get cm cluster-info -n <namespace> --template={{.metadata.uid}}" to get cluster name
+   Where '<namespace>' is either 'default' or 'kube-public' or 'kube-service-catalog'.
+   If multiple cluster-info exist, pick either one would work as long as you always use the same one to configure Datadog Agent/Cluster Agent/WPA and other data source agents.
+   Input cluster name []: cluster-demo
+   Input Kafka exporter namespace []: myproject
+   Input Kafka consumer group kind (Deployment/DeploymentConfig/StatefulSet) []: Deployment
+   Input Kafka consumer group kind name []: consumer1-topic0001-group-0001
    Input Kafka consumer group namespace []: myproject
    Input Kafka consumer topic name []: topic0001
-   Input Kafka consumer topic namespace []: myproject
-
-   Do you want to input another set? [default: n]:
-   Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
-   secret/federatorai-data-adapter-secret configured
-   Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
-   configmap/federatorai-data-adapter-config configured
-
-   Setup Federator.ai for datadog successfully
+   
+   You can use Kafka command-line tool 'kafka-consumer-group.sh' (download separately or enter into a broker pod, in /bin directory) to list consumer groups.
+   e.g.: "/bin/kafka-consumer-groups.sh --bootstrap-server <kafka-bootstrap-service>:9092 --describe --all-groups --members"
+   The first column of output is the 'kafkaConsumerGroupId'.
+   Input Kafka consumer group id []: group0001
+   Input Kafka consumer minimum replica number []: 1
+   Input Kafka consumer maximum replica number []: 20
+   
+   Do you want to input another set? [default: n]: 
+   .........
+   (snipped)
+   .........
    ```
-
+    
 4. Please refer to [Federator.ai and Datadog Integration - Installation and Configuration Guide][6] for more details.
 
 
