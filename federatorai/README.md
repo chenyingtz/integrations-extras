@@ -11,7 +11,7 @@
 With integration of ProphetStor Federator.ai, users can easily track the Kafka message production/consumption rate, as well as the prediction of message production rate from Federator.ai dashboard. Based on the prediction or message production rate, Federator.ai automatically scales Kafka consumer replicas to handle the workload. This can be visualized from Federator.ai dashboard where the recommended consumer replicas and the current number of consumer replicas are shown. Additionally, overall consumer lags as well as the average latency in the queue before a message is received by a consumer are also shown on the dashboard for better performance monitoring.
 
 
-* **ProphetStor Federator.ai Cluster Overview**
+**ProphetStor Federator.ai Cluster Overview**
 
 ![cluster_overview_dashboard][19]
 
@@ -40,7 +40,7 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
    - This graph shows monthly predicted CPU usage from the Federator.ai and the CPU usage of the nodes.
 
 
-* **ProphetStor Federator.ai Application Overview**
+**ProphetStor Federator.ai Application Overview**
 
 ![application_overview_dashboard][28]
 
@@ -84,7 +84,7 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
    - This graph shows the CPU utilization of the controller and visualizes if the CPU utilization is over the limit or under the limit.
 
 
-* **ProphetStor Federator.ai Kafka Overview**
+**ProphetStor Federator.ai Kafka Overview**
 
 ![dashboard_overview][42]
 
@@ -107,7 +107,7 @@ With integration of ProphetStor Federator.ai, users can easily track the Kafka m
    - This timeseries graph shows the CPU usage of consumers.
 
 
-* **ProphetStor Federator.ai Cost Analysis Overview**
+**ProphetStor Federator.ai Cost Analysis Overview**
 
 ![cost_analysis_overview][49]
 
