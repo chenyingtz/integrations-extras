@@ -22,10 +22,10 @@
   "integration_id": "federatorai",
   "assets": {
     "dashboards": {
-		"ProphetStor Federator.ai - Kafka Overview": "assets/dashboards/overview.json",
-		"ProphetStor Federator.ai - Cluster Overview": "assets/dashboards/cluster-overview.json",
-		"ProphetStor Federator.ai - Application Overview": "assets/dashboards/application-overview.json",
-		"ProphetStor Federator.ai - Cost Analysis Overview": "assets/dashboards/cost-analysis-overview.json"
+		"ProphetStor Federator.ai Kafka Overview": "assets/dashboards/overview.json",
+		"ProphetStor Federator.ai Cluster Overview": "assets/dashboards/cluster-overview.json",
+		"ProphetStor Federator.ai Application Overview": "assets/dashboards/application-overview.json",
+		"ProphetStor Federator.ai Cost Analysis Overview": "assets/dashboards/cost-analysis-overview.json"
 	},
     "saved_views": {},
     "monitors": {},
