@@ -1,5 +1,5 @@
-{
-    "notify_list": [],
+
+tify_list": [],
     "description": "[ProphetStor Federator.ai][1] is an AI-based solution that helps enterprises manage, optimize, auto-scale resources for any applications on Kubernetes. Using advanced machine learning algorithms to predict application workload, Federator.ai scales the right amount of resources at the right time for optimized application performance.\n\n* AI-based workload prediction for Kafka or any applications\n* Resource recommendation based on workload prediction, application, Kubernetes and other related metrics\n* Automatic scaling of application containers through [Datadog Watermark Pod Autoscaler (WPA)][4]\n\n[1]: https://www.prophetstor.com/federator-ai-for-aiops/federator-ai-datadog-integration/\n[4]: https://github.com/DataDog/watermarkpodautoscaler",
     "template_variables": [
         {
@@ -19,7 +19,7 @@
         }
     ],
     "is_read_only": false,
-    "id": "yah-pbj-dr4",
+    "id": "kcm-4jh-kff",
     "title": "ProphetStor Federator.ai Cluster Overview",
     "widgets": [
         {
@@ -76,9 +76,8 @@
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Node Current/Predicted Memory Usage (Daily)",
-                "title_align": "left",
                 "yaxis": {
                     "max": "auto",
                     "include_zero": true,
@@ -86,10 +85,12 @@
                     "min": "auto",
                     "label": ""
                 },
+                "title_align": "left",
                 "show_legend": true,
                 "time": {
                     "live_span": "2d"
                 },
+                "title": "Node Current/Predicted Memory Usage (Daily)",
                 "requests": [
                     {
                         "q": "sum:kubernetes.memory.usage{$kube_cluster,$host} by {host}",
@@ -117,17 +118,16 @@
             },
             "layout": {
                 "y": 78,
-                "x": 0,
+                "x": 1,
                 "height": 24,
-                "width": 40
+                "width": 39
             },
             "id": 5108848502046538
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Node Current/Predicted Memory Usage (Weekly)",
-                "title_align": "left",
                 "yaxis": {
                     "max": "auto",
                     "include_zero": true,
@@ -135,10 +135,12 @@
                     "min": "auto",
                     "label": ""
                 },
+                "title_align": "left",
                 "show_legend": true,
                 "time": {
                     "live_span": "1w"
                 },
+                "title": "Node Current/Predicted Memory Usage (Weekly)",
                 "requests": [
                     {
                         "q": "sum:kubernetes.memory.usage{$kube_cluster,$host} by {host}",
@@ -174,9 +176,8 @@
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Node Current/Predicted Memory Usage (Monthly)",
-                "title_align": "left",
                 "yaxis": {
                     "max": "auto",
                     "include_zero": true,
@@ -184,10 +185,12 @@
                     "min": "auto",
                     "label": ""
                 },
+                "title_align": "left",
                 "show_legend": true,
                 "time": {
                     "live_span": "1mo"
                 },
+                "title": "Node Current/Predicted Memory Usage (Monthly)",
                 "requests": [
                     {
                         "q": "sum:kubernetes.memory.usage{$kube_cluster,$host} by {host}",
@@ -223,9 +226,8 @@
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Node Current/Predicted CPU Usage (Daily)",
-                "title_align": "left",
                 "yaxis": {
                     "max": "auto",
                     "include_zero": true,
@@ -233,10 +235,12 @@
                     "min": "auto",
                     "label": ""
                 },
+                "title_align": "left",
                 "show_legend": true,
                 "time": {
                     "live_span": "2d"
                 },
+                "title": "Node Current/Predicted CPU Usage (Daily)",
                 "requests": [
                     {
                         "q": "sum:kubernetes.cpu.usage.total{$kube_cluster,$host} by {host}/1000000",
@@ -278,9 +282,8 @@
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Node Current/Predicted CPU Usage (Weekly)",
-                "title_align": "left",
                 "yaxis": {
                     "max": "auto",
                     "include_zero": true,
@@ -288,10 +291,12 @@
                     "min": "auto",
                     "label": ""
                 },
+                "title_align": "left",
                 "show_legend": true,
                 "time": {
                     "live_span": "1w"
                 },
+                "title": "Node Current/Predicted CPU Usage (Weekly)",
                 "requests": [
                     {
                         "q": "sum:kubernetes.cpu.usage.total{$kube_cluster,$host} by {host}/1000000",
@@ -333,9 +338,8 @@
         },
         {
             "definition": {
+                "custom_links": [],
                 "title_size": "16",
-                "title": "Node Current/Predicted CPU Usage (Monthly)",
-                "title_align": "left",
                 "yaxis": {
                     "max": "auto",
                     "include_zero": true,
@@ -343,10 +347,12 @@
                     "min": "auto",
                     "label": ""
                 },
+                "title_align": "left",
                 "show_legend": true,
                 "time": {
                     "live_span": "1mo"
                 },
+                "title": "Node Current/Predicted CPU Usage (Monthly)",
                 "requests": [
                     {
                         "q": "sum:kubernetes.cpu.usage.total{$kube_cluster,$host} by {host}/1000000",
